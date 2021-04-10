@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base::head(~{::title})">
+    <title>Autores</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="container mx-auto">
+        <div th:replace="base::header">
+        </div>
+        <div class="container p-2">
+            <div class="grid grid-cols-2 items-center mb-2">
+                <div><h1 class="text-xl font-bold mt-2 mb-2">Autores</h1></div>
+                <div class="text-right">
+                    <a class="bg-indigo-500 hover:bg-indigo-600 text-white p-2 pl-4 pr-4 rounded-md" href="/autores/novo">Novo</a>
+                </div>
+            </div>
+            <table class="w-full">
+                <thead>
+                    <tr class="border-t border-b font-bold">
+                        <td width="1px">ID</td>
+                        <td>Nome</td>
+                        <td width="50px" align="center">Ação</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="autor: ${autores}" class="border-b hover:bg-indigo-100">
+                        <td th:text="${autor.id}">1</td>
+                        <td th:text="${autor.nome}">Eduardo Rocha</td>
+                        <td align="center">
+                            <a th:href="@{/autores/alterar/{id}(id=${autor.id})}"><i class="fa fa-edit"></i></a>
+                            <a th:href="@{/autores/excluir/{id}(id=${autor.id})}"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

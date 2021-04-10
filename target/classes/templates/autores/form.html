@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base::head(~{::title})">
+    <title>Autores</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="container mx-auto">
+        <div th:replace="base::header">
+        </div>
+        <div class="container p-2">
+            <div class="grid grid-cols-2 items-center mb-2">
+                <div><h1 class="text-xl font-bold mt-2 mb-2"></h1></div>
+            </div>
+            <div>
+            
+             <p th:text="'Nome :' + ${name} + '!'" />
+             <p th:text="'Email: ' + ${email} + '!'" />
+             <p th:text="'Login: ' + ${username} + '!'" />
+             <p th:text="'Telefone: ' + ${telefone} + '!'" />
+               
+            </div>
+        </div>
+    </div>
+</body>
+</html>

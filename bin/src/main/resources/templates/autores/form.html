@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base::head(~{::title})">
+    <title>Autores</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="container mx-auto">
+        <div th:replace="base::header">
+        </div>
+        <div class="container p-2">
+            <div class="grid grid-cols-2 items-center mb-2">
+                <div><h1 class="text-xl font-bold mt-2 mb-2">Novo Autor</h1></div>
+            </div>
+            <div>
+                <form action="#" th:action="@{/autores/salvar}" th:object="${autor}" method="post">
+                    <input type="hidden" id="id" th:field="*{id}" />
+                    <div>
+                        <label for="nome">Nome usuario</label>
+                        <input type="text" id="nome" th:field="*{nome}" class="w-full border p-2" />
+                        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-red-500 text-xs"></span>
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="bg-indigo-900 rounded text-white p-2 pr-4 pl-4">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

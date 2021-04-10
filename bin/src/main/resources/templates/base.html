@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <title th:replace="${title}">HEAD</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div th:fragment="header" class="bg-indigo-900 font-bold p-5 text-white text-xl">
+        <h1>Controle de Tarefas</h1>
+    </div>
+    <div th:fragment="footer">
+        <h1>Footer</h1>
+    </div>
+</body>
+</html>
